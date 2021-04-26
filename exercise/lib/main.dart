@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 // void main() {
 //   // by using parentheses we are creating MyApp() instance we are instantiating
 //   // MyApp widget class here
@@ -20,7 +22,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // class wide variable are called properties
   var questions = [
-    'What\'s favorite color?',
+    'What is your favorite color?',
     'What\'s your favorite animal?',
     'What is your favourite pet name?',
     'What is your favourite person?',
@@ -56,7 +58,7 @@ class _MyAppState extends State<MyApp> {
             children: [
               Padding(
                   padding: EdgeInsetsDirectional.only(top: 10.0, start: 12.0),
-                  child: Text(questions[_questionIndex])),
+                  child: Question(questions[_questionIndex])),
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: ElevatedButton(
