@@ -1,7 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  // Take my app instannce as argument MyApp()
   runApp(MyApp());
 }
 
