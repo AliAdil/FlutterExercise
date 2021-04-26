@@ -26,7 +26,8 @@ class _MyAppState extends State<MyApp> {
     'What\'s your favorite animal?',
     'What is your favourite pet name?',
     'What is your favourite person?',
-    'What is your blood group?'
+    'What is your blood group?',
+    'What is your blood group? longggggggggggggggggggggggggggggggggtextlongggggggggggggggggggggggggg very long'
   ];
   var _questionIndex = 0;
   void _answerQuestion() {
