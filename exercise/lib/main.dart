@@ -13,11 +13,11 @@ void main() => runApp(MyApp());
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
+class _MyAppState extends State<MyApp> {
   // class wide variable are called properties
   var questions = [
     'What\'s favorite color?',
@@ -26,16 +26,16 @@ class MyAppState extends State<MyApp> {
     'What is your favourite person?',
     'What is your blood group?'
   ];
-  var questionIndex = 0;
-  void answerQuestion() {
+  var _questionIndex = 0;
+  void _answerQuestion() {
     setState(() {
-      if (questionIndex < questions.length - 1) {
-        questionIndex = questionIndex + 1;
+      if (_questionIndex < questions.length - 1) {
+        _questionIndex = _questionIndex + 1;
       } else {
-        questionIndex = 0;
+        _questionIndex = 0;
       }
     });
-    print(questionIndex);
+    print(_questionIndex);
   }
 
   @override
@@ -56,14 +56,14 @@ class MyAppState extends State<MyApp> {
             children: [
               Padding(
                   padding: EdgeInsetsDirectional.only(top: 10.0, start: 12.0),
-                  child: Text(questions[questionIndex])),
+                  child: Text(questions[_questionIndex])),
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: ElevatedButton(
                     // answerQuestion is the name of the function not the result of
                     // the function if we add parentheses in front of funtion it will
                     // execute
-                    onPressed: answerQuestion,
+                    onPressed: _answerQuestion,
                     child: Text('Answer 1')),
               ),
               Padding(
