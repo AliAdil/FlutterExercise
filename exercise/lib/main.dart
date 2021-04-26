@@ -10,20 +10,36 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 // Every widget is a flutter class which have build method
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+
+class MyAppState extends State<MyApp> {
   // class wide variable are called properties
+  var questions = [
+    'What\'s favorite color?',
+    'What\'s your favorite animal?',
+    'What is your favourite pet name?',
+    'What is your favourite person?',
+    'What is your blood group?'
+  ];
   var questionIndex = 0;
   void answerQuestion() {
-    questionIndex = questionIndex + 1;
+    setState(() {
+      if (questionIndex < questions.length - 1) {
+        questionIndex = questionIndex + 1;
+      } else {
+        questionIndex = 0;
+      }
+    });
     print(questionIndex);
   }
 
   @override
   Widget build(BuildContext context) {
-    var questions = [
-      'What\'s favorite color?',
-      'What\'s your favorite animal?'
-    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
@@ -40,7 +56,7 @@ class MyApp extends StatelessWidget {
             children: [
               Padding(
                   padding: EdgeInsetsDirectional.only(top: 10.0, start: 12.0),
-                  child: Text(questions.elementAt(questionIndex))),
+                  child: Text(questions[questionIndex])),
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: ElevatedButton(
