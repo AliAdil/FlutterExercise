@@ -11,13 +11,19 @@ void main() => runApp(MyApp());
 
 // Every widget is a flutter class which have build method
 class MyApp extends StatelessWidget {
+  // class wide variable are called properties
+  var questionIndex = 0;
   void answerQuestion() {
-    print("Answer to my questions");
+    questionIndex = questionIndex + 1;
+    print(questionIndex);
   }
 
   @override
   Widget build(BuildContext context) {
-    var questions = ['What\'s favorite color?', 'What\'s your favorite animal'];
+    var questions = [
+      'What\'s favorite color?',
+      'What\'s your favorite animal?'
+    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
@@ -34,7 +40,7 @@ class MyApp extends StatelessWidget {
             children: [
               Padding(
                   padding: EdgeInsetsDirectional.only(top: 10.0, start: 12.0),
-                  child: Text('The questions!')),
+                  child: Text(questions.elementAt(questionIndex))),
               Padding(
                 padding: EdgeInsets.all(8.0),
                 child: ElevatedButton(
