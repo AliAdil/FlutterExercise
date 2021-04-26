@@ -32,11 +32,35 @@ class MyApp extends StatelessWidget {
           ),
           body: Column(
             children: [
-              Text('The questions!'),
-              ElevatedButton(
-                  onPressed: answerQuestion, child: Text('Answer 1')),
-              ElevatedButton(onPressed: null, child: Text('Answer 2')),
-              ElevatedButton(onPressed: null, child: Text('Answer 3')),
+              Padding(
+                  padding: EdgeInsetsDirectional.only(top: 10.0, start: 12.0),
+                  child: Text('The questions!')),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                    // answerQuestion is the name of the function not the result of
+                    // the function if we add parentheses in front of funtion it will
+                    // execute
+                    onPressed: answerQuestion,
+                    child: Text('Answer 1')),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                    // anonymous funtion  with no arguments
+                    onPressed: () => print('Answer Question 2 '),
+                    child: Text('Answer 2')),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: ElevatedButton(
+                    // detialed anonymous funtion with no arguments
+                    onPressed: () => {
+                          //.... some other functionality
+                          print('Answer number 3')
+                        },
+                    child: Text('Answer 3')),
+              ),
             ],
           )),
     );
