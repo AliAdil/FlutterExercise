@@ -33,7 +33,8 @@ class MyApp extends StatelessWidget {
           body: Column(
             children: [
               Text('The questions!'),
-              ElevatedButton(onPressed: null, child: Text('Answer 1')),
+              ElevatedButton(
+                  onPressed: answerQuestion, child: Text('Answer 1')),
               ElevatedButton(onPressed: null, child: Text('Answer 2')),
               ElevatedButton(onPressed: null, child: Text('Answer 3')),
             ],
