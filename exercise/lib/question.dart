@@ -7,25 +7,27 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(30),
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        color: Colors.indigo,
-        border: Border.all(color: Colors.black),
-      ),
+      width: double.infinity,
+      // margin: EdgeInsets.all(30),
+      // padding: EdgeInsets.all(20),
+      // decoration: BoxDecoration(
+      //   color: Colors.indigo,
+      //   border: Border.all(color: Colors.black),
+      // ),
       child: Text(
         questionText,
         textAlign: TextAlign.center,
-        overflow: TextOverflow.ellipsis,
+        // overflow: TextOverflow.ellipsis,
         style: TextStyle(
-          fontWeight: FontWeight.bold,
+          // fontWeight: FontWeight.bold,
           fontSize: 28.0,
-          color: Colors.white,
-          //  decoration: TextDecoration.lineThrough,
-          decorationThickness: 2.5,
-          decorationColor: Colors.redAccent,
-          letterSpacing: 5.0,
-          backgroundColor: Colors.indigo,
+          // color: Colors.white,
+          // //  decoration: TextDecoration.lineThrough,
+          // decorationThickness: 2.5,
+          // decorationColor: Colors.redAccent,
+          // letterSpacing: 5.0,
+          // backgroundColor: Colors.indigo,
+
           //fontStyle: FontStyle.italic,
         ),
       ),
