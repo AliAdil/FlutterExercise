@@ -23,12 +23,26 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   // class wide variable are called properties
   var questions = [
-    'What is your favorite color?',
-    'What\'s your favorite animal?',
-    'What is your favourite pet name?',
-    'What is your favourite person?',
-    'What is your blood group?',
-    'What is your blood group? longggggggggggggggggggggggggggggggggtextlongggggggggggggggggggggggggg very long'
+    {
+      'questionText': 'What is your favorite color?',
+      'answers': ['Red', 'Blue', 'Green', 'Pink']
+    },
+    {
+      'questionText': 'What\'s your favorite animal?',
+      'answers': ['Dog', 'Cat', 'Rabit', 'Chimp']
+    },
+    {
+      'questionText': 'What is your favourite pet name?',
+      'answers': ['Rabit', 'Dog', 'Cat', 'Chimp']
+    },
+    {
+      'questionText': 'What is your favourite person?',
+      'answers': ['ALi', 'Adil', 'Usman', 'Wahab']
+    },
+    {
+      'questionText': 'What is your blood group?',
+      'answwer': ['A+', 'B+', 'A', 'B']
+    },
   ];
   var _questionIndex = 0;
   void _answerQuestion() {
