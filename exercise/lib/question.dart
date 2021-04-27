@@ -7,6 +7,7 @@ class Question extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      // cover entire availabe size
       width: double.infinity,
       // margin: EdgeInsets.all(30),
       // padding: EdgeInsets.all(20),
