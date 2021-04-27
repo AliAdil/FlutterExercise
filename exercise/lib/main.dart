@@ -62,12 +62,7 @@ class _MyAppState extends State<MyApp> {
                   child: Question(questions[_questionIndex])),
               Padding(
                 padding: EdgeInsets.all(8.0),
-                child: ElevatedButton(
-                    // answerQuestion is the name of the function not the result of
-                    // the function if we add parentheses in front of funtion it will
-                    // execute
-                    onPressed: _answerQuestion,
-                    child: Text('Answer 1')),
+                // Puttion your button here
               ),
               Padding(
                 padding: EdgeInsets.all(8.0),
