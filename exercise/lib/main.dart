@@ -29,7 +29,7 @@ class _MyAppState extends State<MyApp> {
     },
     {
       'questionText': 'What\'s your favorite animal?',
-      'answers': ['Dog', 'Cat', 'Rabit', 'Chimp']
+      'answers': ['Dog', 'Cat', 'Rabit']
     },
     {
       'questionText': 'What is your favourite pet name?',
@@ -37,11 +37,11 @@ class _MyAppState extends State<MyApp> {
     },
     {
       'questionText': 'What is your favourite person?',
-      'answers': ['ALi', 'Adil', 'Usman', 'Wahab']
+      'answers': ['ALi', 'Adil', 'Usman']
     },
     {
       'questionText': 'What is your blood group?',
-      'answwer': ['A+', 'B+', 'A', 'B']
+      'answers': ['A+', 'B+', 'A', 'B']
     },
   ];
   var _questionIndex = 0;
@@ -76,14 +76,19 @@ class _MyAppState extends State<MyApp> {
                   padding: EdgeInsetsDirectional.only(top: 10.0, start: 12.0),
                   // we are passing string value in question form list with
                   // the help of index
-                  child: Question(questions[_questionIndex])),
+                  child: Question(questions[_questionIndex]['questionText'])),
               Padding(
                 padding: EdgeInsets.all(8.0),
                 // Puttion your button here
               ),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
+
+              ...(questions[_questionIndex]['answers'] as List<String>)
+                  .map((answer) {
+                return Answer(_answerQuestion, answer);
+              }).toList()
+              // Answer(_answerQuestion),
+              // Answer(_answerQuestion),
+              // Answer(_answerQuestion),
               /*  Padding(
                 padding: EdgeInsets.all(8.0),
                 child: ElevatedButton(
