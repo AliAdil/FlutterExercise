@@ -9,6 +9,7 @@ class Question extends StatelessWidget {
     return Container(
       // cover entire availabe size
       width: double.infinity,
+      margin: EdgeInsets.all(10.0),
       // margin: EdgeInsets.all(30),
       // padding: EdgeInsets.all(20),
       // decoration: BoxDecoration(
