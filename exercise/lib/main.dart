@@ -1,3 +1,4 @@
+import 'package:exercise/answer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -59,12 +60,17 @@ class _MyAppState extends State<MyApp> {
             children: [
               Padding(
                   padding: EdgeInsetsDirectional.only(top: 10.0, start: 12.0),
+                  // we are passing string value in question form list with
+                  // the help of index
                   child: Question(questions[_questionIndex])),
               Padding(
                 padding: EdgeInsets.all(8.0),
                 // Puttion your button here
               ),
-              Padding(
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
+              /*  Padding(
                 padding: EdgeInsets.all(8.0),
                 child: ElevatedButton(
                     // anonymous funtion  with no arguments
@@ -80,7 +86,7 @@ class _MyAppState extends State<MyApp> {
                           print('Answer number 3')
                         },
                     child: Text('Answer 3')),
-              ),
+              ),*/
             ],
           )),
     );
