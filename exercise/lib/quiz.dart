@@ -30,8 +30,13 @@ class Quiz extends StatelessWidget {
         // 'answer' as List of String and map that string list and return
         // each value of answers as list
         // ... convert list as single item
-        ...(questions[index]['answers'] as List<String>).map((answer) {
-          return Answer(answerQuestion, answer);
+        // ...(questions[index]['answers'] as List<String>).map((answer) {
+        //   return Answer(answerQuestion, answer);
+        // }).toList(),
+        ...(questions[index]['answers'] as List<Map<String, Object>>)
+            .map((answer) {
+          // return Answer(answerQuestion, answer['text']);
+          return Answer(() => answerQuestion(answer['score']), answer['text']);
         }).toList(),
       ],
     );
