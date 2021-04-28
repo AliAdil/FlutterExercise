@@ -22,42 +22,50 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   // class wide variable are called properties
-  var questions = [
-    {
-      'questionText': 'What is your favorite color?',
-      'answers': ['Red', 'Blue', 'Green', 'Pink']
-    },
-    {
-      'questionText': 'What\'s your favorite animal?',
-      'answers': ['Dog', 'Cat', 'Rabit']
-    },
-    {
-      'questionText': 'What is your favourite pet name?',
-      'answers': ['Rabit', 'Dog', 'Cat', 'Chimp']
-    },
-    {
-      'questionText': 'What is your favourite person?',
-      'answers': ['ALi', 'Adil', 'Usman']
-    },
-    {
-      'questionText': 'What is your blood group?',
-      'answers': ['A+', 'B+', 'A', 'B']
-    },
-  ];
+
   var _questionIndex = 0;
+  // void _answerQuestion() {
+  //   setState(() {
+  //     if (_questionIndex < questions.length - 1) {
+  //       _questionIndex = _questionIndex + 1;
+  //     } else {
+  //       _questionIndex = 0;
+  //     }
+  //   });
+  //   print(_questionIndex);
+  // }
+
   void _answerQuestion() {
     setState(() {
-      if (_questionIndex < questions.length - 1) {
-        _questionIndex = _questionIndex + 1;
-      } else {
-        _questionIndex = 0;
-      }
+      _questionIndex = _questionIndex + 1;
     });
     print(_questionIndex);
   }
 
   @override
   Widget build(BuildContext context) {
+    const questions = const [
+      {
+        'questionText': 'What is your favorite color?',
+        'answers': ['Red', 'Blue', 'Green', 'Pink']
+      },
+      {
+        'questionText': 'What\'s your favorite animal?',
+        'answers': ['Dog', 'Cat', 'Rabit']
+      },
+      {
+        'questionText': 'What is your favourite pet name?',
+        'answers': ['Rabit', 'Dog', 'Cat', 'Chimp']
+      },
+      {
+        'questionText': 'What is your favourite person?',
+        'answers': ['ALi', 'Adil', 'Usman']
+      },
+      {
+        'questionText': 'What is your blood group?',
+        'answers': ['A+', 'B+', 'A', 'B']
+      },
+    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
 
