@@ -1,14 +1,9 @@
 import 'package:exercise/quiz.dart';
+import 'package:exercise/result.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import './quiz.dart';
-
-// void main() {
-//   // by using parentheses we are creating MyApp() instance we are instantiating
-//   // MyApp widget class here
-//   runApp(MyApp());
-// }
 
 void main() => runApp(MyApp());
 
@@ -67,10 +62,12 @@ class _MyAppState extends State<MyApp> {
           title: Text('My First App'),
         ),
         body: _questionIndex < _questions.length
-            ? Quiz(_answerQuestion, _questions, _questionIndex)
-            : Center(
-                child: Text('You Did it'),
-              ),
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questions: _questions,
+                index: _questionIndex,
+              )
+            : Result(),
       ),
     );
   }

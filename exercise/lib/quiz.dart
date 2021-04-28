@@ -4,11 +4,14 @@ import './question.dart';
 import './answer.dart';
 
 class Quiz extends StatelessWidget {
-  final Function _answerQuestion;
-  final List _questions;
+  final Function answerQuestion;
+  final List questions;
   final int index;
 
-  Quiz(this._answerQuestion, this._questions, this.index);
+  Quiz(
+      {@required this.answerQuestion,
+      @required this.questions,
+      @required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class Quiz extends StatelessWidget {
             padding: EdgeInsetsDirectional.only(top: 10.0, start: 12.0),
             // we are passing string value in question form list with
             // the help of index
-            child: Question(_questions[index]['questionText'])),
+            child: Question(questions[index]['questionText'])),
         Padding(
           padding: EdgeInsets.all(8.0),
         ),
@@ -27,8 +30,8 @@ class Quiz extends StatelessWidget {
         // 'answer' as List of String and map that string list and return
         // each value of answers as list
         // ... convert list as single item
-        ...(_questions[index]['answers'] as List<String>).map((answer) {
-          return Answer(_answerQuestion, answer);
+        ...(questions[index]['answers'] as List<String>).map((answer) {
+          return Answer(answerQuestion, answer);
         }).toList(),
       ],
     );
