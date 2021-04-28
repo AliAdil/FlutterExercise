@@ -81,11 +81,15 @@ class _MyAppState extends State<MyApp> {
                 padding: EdgeInsets.all(8.0),
                 // Puttion your button here
               ),
-
+              // it will return Answer widget and it will take
+              // questions list item at _questionIndex with Key value of
+              // 'answer' as List of String and map that string list and return
+              // each value of answers as list
+              // ... convert list as single item
               ...(questions[_questionIndex]['answers'] as List<String>)
                   .map((answer) {
                 return Answer(_answerQuestion, answer);
-              }).toList()
+              }).toList(),
               // Answer(_answerQuestion),
               // Answer(_answerQuestion),
               // Answer(_answerQuestion),
