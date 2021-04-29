@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   final resultScore;
-  Result(this.resultScore);
+  final Function resetApp;
+  Result(this.resultScore, this.resetApp);
 
   String get resultPhrase {
     var resultText = 'You Did it!';
@@ -34,6 +35,10 @@ class Result extends StatelessWidget {
             "Your Score is " + resultScore.toString(),
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
           ),
+          ElevatedButton(
+            onPressed: resetApp,
+            child: Text('Reset App'),
+          )
         ],
       ),
     );
