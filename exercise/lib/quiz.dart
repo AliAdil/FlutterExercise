@@ -7,11 +7,13 @@ class Quiz extends StatelessWidget {
   final Function answerQuestion;
   final questions;
   final int index;
+  final int totalScore;
 
   Quiz(
       {@required this.answerQuestion,
       @required this.questions,
-      @required this.index});
+      @required this.index,
+      this.totalScore});
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +40,13 @@ class Quiz extends StatelessWidget {
           // return Answer(answerQuestion, answer['text']);
           return Answer(() => answerQuestion(answer['score']), answer['text']);
         }).toList(),
+        Text(
+          'Current Score $totalScore',
+          style: TextStyle(
+            fontSize: 28.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ],
     );
   }
