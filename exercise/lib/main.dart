@@ -79,11 +79,13 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       _questionIndex = _questionIndex + 1;
     });
+
     if (_questionIndex < _questions.length) {
       print('We have more question');
     } else {
       print('We dont have any other questions');
     }
+
     print(_questionIndex);
   }
 
