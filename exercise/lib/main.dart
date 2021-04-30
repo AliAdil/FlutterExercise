@@ -92,17 +92,20 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
           title: Text('My First App'),
         ),
-        body: _questionIndex < _questions.length
-            ? Quiz(
-                answerQuestion: _answerQuestion,
-                questions: _questions,
-                index: _questionIndex,
-                totalScore: _totalScore,
-              )
-            : Result(_totalScore, _resetQuiz),
+        body: SingleChildScrollView(
+          child: _questionIndex < _questions.length
+              ? Quiz(
+                  answerQuestion: _answerQuestion,
+                  questions: _questions,
+                  index: _questionIndex,
+                  totalScore: _totalScore,
+                )
+              : Result(_totalScore, _resetQuiz),
+        ),
       ),
     );
   }
